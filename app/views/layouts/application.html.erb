@@ -3,12 +3,39 @@
   <head>
     <title>Saasapp</title>
     <%= csrf_meta_tags %>
-
+    
+    <!-- Google Fonts Additions -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed:300" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- Create a button, and when it is collapsed, give it the image of 3 "icon-bars". #main-nav-collapse is how we refer back to it -->
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav-collapse">
+            <!-- sr-only hides the information related to screen readers. Improves accessibility of website for visually impaired users. -->
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">GoalPositive</a>
+        </div>
+        <div class="collapse navbar-collapse" id="main-nav-collapse">
+          <!-- for ul, use nav navbar-nav. navbar-right aligns list from right to left -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/about">About</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </div>
+    
+        <%= yield %>
+        
   </body>
 </html>
