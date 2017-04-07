@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 h1 {
     font-family: 'Lato', sans-serif;
@@ -31,5 +33,9 @@ h2, h3 {
         color: white;
         opacity: 0.65;
     }
+}
+
+.navbar-default .navbar-brand .fa {
+    color: black;
 }
 
