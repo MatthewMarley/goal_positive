@@ -11,7 +11,7 @@
                 <div class="well text-center">
                     <h2>Sign up to GoalPositive today!</h2>
                     <h4>A site where you can share your goals with a community of like-minded individuals</h4>
-                    <%= link_to "Sign up today!", new_user_registration_path, class: 'btn btn-primary btn-block btn-lg' %>
+                    <%= link_to "Sign up today!", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-block btn-lg' %>
             <% end %>
             </div>
         </div>  
