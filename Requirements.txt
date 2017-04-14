@@ -1,0 +1,12 @@
+A user should be able to create a profile
+* We need to create a migration for our Profiles (and link to User through the User.id) (Called CreateProfiles)
+* In this migration we need the following information
+    - User ID
+    - First Name
+    - Last Name
+    - Contact Email
+    - Timestamps
+* We need to associate the User and Profiles table
+    - A User has_one profile, a Profile belongs_to a User
+    - Remember that associations are made in the Model files (inheriting from ActiveRecord::Base)
+
