@@ -10,3 +10,15 @@ A user should be able to create a profile
     - A User has_one profile, a Profile belongs_to a User
     - Remember that associations are made in the Model files (inheriting from ActiveRecord::Base)
 
+
+A flash message should occur when signing up, signing in, and logging out.
+* Should these flash messages be put in the view file or the controller?
+* Use JS to style them so they stay for 4 seconds, then fade out in 2?
+
+
+User Profiles - II
+* Each user should have one profile
+* User should see the link for the profile form upon signing up (and upon logging in if they need to amend it?)
+* As well as being able to see it, the User must be able to amend their profile details
+* User profile at this time should have no picture
+* User should be able to view other users

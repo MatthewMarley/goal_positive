@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
     root to: 'pages#home'
+    # is the 'users/registrations' talking about the controller or view file?
     devise_for :users, controllers: { registrations: 'users/registrations' }
     resources :users do
       resource :profile

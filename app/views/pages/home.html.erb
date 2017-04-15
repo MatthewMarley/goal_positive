@@ -24,4 +24,6 @@
     <!-- <img src="http://www.wallpapers-web.com/data/out/146/5066806-mountain-peak-wallpapers.jpg"/> -->
     
     </div>
+    <%= link_to "Create your profile", new_user_profile_path(user_id: current_user.id) if user_signed_in? %>
 </div>
+

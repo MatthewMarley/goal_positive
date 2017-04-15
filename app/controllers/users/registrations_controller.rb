@@ -7,7 +7,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
             if params[:plan]
                 resource.plan_id = params[:plan]
                 resource.save
+                flash[:notice] = "Sign up successful"
             else
+                flash[:alert] = "Error occured"
             end
         end
     end
