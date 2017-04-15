@@ -15,10 +15,12 @@ class ProfilesController < ApplicationController
         
         if @profile.save
             flash[:success] = "Profile updated"
-            redirect_to root_path
+            # Why is this user_id and not id? user_id is the technical column name
+            # in the profiles table
+            redirect_to user_path(params[:user_id])
         else
             flash[:danger] = "Profile not updated"
-            redirect_to root_path
+            render action: :new
         end
     end
     
