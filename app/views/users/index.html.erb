@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1 class="text-center">Welcome to the community</h1>
+                <% @users.each do |user| %>
+                    <% if user.profile %>
+                        <div class="well">
+                            <%= "First Name: " %>
+                            <%= user.profile.first_name %> </br>
+                            <%= "Last Name: " %>
+                            <%= user.profile.last_name %> </br>
+                            <%= "Contact Email: " %>
+                            <%= user.profile.contact_email %> </br>
+                            </br>
+                        </div>
+                    <% end %>
+                <% end %>
+        </div>    
+    </div>        
+</div>

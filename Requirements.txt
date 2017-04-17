@@ -19,6 +19,6 @@ A flash message should occur when signing up, signing in, and logging out.
 User Profiles - II
 * Each user should have one profile  - Done
 * User should see the link for the profile form upon signing up (and upon logging in if they need to amend it?) - Done
-* As well as being able to see it, the User must be able to amend their profile details
+* As well as being able to see it, the User must be able to amend their profile details - Done
 * User profile at this time should have no picture - Done
 * User should be able to view other users

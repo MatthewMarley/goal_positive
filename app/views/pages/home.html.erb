@@ -1,5 +1,5 @@
 <div class="container-fluid home-callout text-center">
-    <h1>Welcome to the home page!</h1>
+    <h1>Welcome to GoalPositive!</h1>
     <h2>The home of positivity.</h2>
 </div>
 
@@ -17,18 +17,25 @@
         </div>  
     </div>
 </div>
-<div class="container-fluid homepage-picture">
+<div class="container homepage-picture">
     <div class="align-left">
 
     <!-- <img src="http://www.wallpapers-web.com/data/out/146/5066618-mountain-peak-wallpapers.jpg"/> -->
     <!-- <img src="http://www.wallpapers-web.com/data/out/146/5066806-mountain-peak-wallpapers.jpg"/> -->
     
     </div>
-    <% if current_user.profile %>
+    
+    <% if user_signed_in? %>
+    
+        <% if current_user.profile %>
         <!-- Why is this current_user.id? Not just current_id? -->
-        <%= link_to "See your Profile", user_path(current_user.id) if user_signed_in? %>
+            <%= link_to "See your Profile", user_path(current_user.id) %>
+            </br>
+            <%= link_to "Edit your Profile", edit_user_profile_path(user_id: current_user.id) %>
+        <% else %>
+            <%= link_to "Create your profile", new_user_profile_path(user_id: current_user.id) if user_signed_in? %>
+        <% end %>
     <% else %>
-        <%= link_to "Create your profile", new_user_profile_path(user_id: current_user.id) if user_signed_in? %>
     <% end %>
 </div>
 

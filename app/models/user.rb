@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :plan
   has_one :profile
+  has_many :goals
   # validates_presence_of :plan
 end
