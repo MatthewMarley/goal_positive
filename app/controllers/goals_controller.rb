@@ -21,9 +21,14 @@ class GoalsController < ApplicationController
     
     
     def show
-        
         @user = User.find(params[:user_id])
-        
+        @goal = @user.goals
+    end
+    
+    # GET to /users/user_id/goals/edit
+    def edit
+         @user = User.find(params[:user_id])
+         @goal = @user.goals
     end
 
     

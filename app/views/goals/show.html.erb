@@ -10,6 +10,7 @@
                     <!-- @goals should be for all goals for only the current_user -->
                     <% @user.goals.each do |goal| %>
                         <div class="well view-goals">
+                            <!-- <h5 class="text-left goal-edit"><%= link_to "Edit your Goal", edit_user_goals_path(user_id: current_user.id) %></h5> -->
                             <strong><%= "Goal Type: " %></strong>
                             <%= goal.goal_type %>
                             </br>

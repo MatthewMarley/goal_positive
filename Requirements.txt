@@ -22,3 +22,4 @@ User Profiles - II
 * As well as being able to see it, the User must be able to amend their profile details - Done
 * User profile at this time should have no picture - Done
 * User should be able to view other users
+
