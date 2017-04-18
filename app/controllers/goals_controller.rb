@@ -1,7 +1,7 @@
 class GoalsController < ApplicationController
     
     def new
-       @goals = Goal.new 
+       @goal = Goal.new 
     end
     
     

@@ -1,0 +1,17 @@
+<!-- the multipart => true is done automatically by 'form_for', we need to add it for 'form_tag' -->
+<%= form_for @goal, url: user_goals_path, :html => { :multipart => true } do |f| %>
+    <div class="form-group">
+        <%= f.label :goal_type %>
+        <%= f.select :goal_type, ['Physical', 'Mental', 'Spiritual'], {}, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :goal_name %>
+        <%= f.text_field :goal_name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        
+        
+    </div>
+    
+    
+<% end %>
