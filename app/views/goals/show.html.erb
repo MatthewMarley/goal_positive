@@ -3,12 +3,13 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="text-center">
                 <h1>Goal Homepage</h1>
-                <%= link_to "Create a New Goal", new_user_goals_path %>
+                    <%= link_to "Create a New Goal", new_user_goals_path %>
                 </br>
                 </br>
                 
-                    <% @goals.each do |goal| %>
-                        <div class="well">
+                    <!-- @goals should be for all goals for only the current_user -->
+                    <% @user.goals.each do |goal| %>
+                        <div class="well view-goals">
                             <strong><%= "Goal Type: " %></strong>
                             <%= goal.goal_type %>
                             </br>
@@ -26,6 +27,7 @@
                             </br>
                         </div>
                     <% end %>
+                    
                 
                 <!-- t.integer  "user_id"
                 t.string   "goal_type"

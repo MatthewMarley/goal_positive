@@ -22,7 +22,7 @@ class GoalsController < ApplicationController
     
     def show
         
-        @goals = Goal.all 
+        @user = User.find(params[:user_id])
         
     end
 

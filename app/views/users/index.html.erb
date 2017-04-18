@@ -5,12 +5,14 @@
                 <% @users.each do |user| %>
                     <% if user.profile %>
                         <div class="well">
-                            <%= "First Name: " %>
+                            <strong><%= "First Name: " %></strong>
                             <%= user.profile.first_name %> </br>
-                            <%= "Last Name: " %>
+                            <strong><%= "Last Name: " %></strong>
                             <%= user.profile.last_name %> </br>
-                            <%= "Contact Email: " %>
+                            <strong><%= "Contact Email: " %></strong>
                             <%= user.profile.contact_email %> </br>
+                            <%= hidden_field_tag 'user_id', params[:user] %>
+                            <%= link_to "See this users goals", user_goals_path(user.id) %>
                             </br>
                         </div>
                     <% end %>
