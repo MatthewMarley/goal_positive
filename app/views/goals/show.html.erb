@@ -4,6 +4,43 @@
             <div class="text-center">
                 <h1>Goal Homepage</h1>
                 <%= link_to "Create a New Goal", new_user_goals_path %>
+                </br>
+                </br>
+                
+                    <% @goals.each do |goal| %>
+                        <div class="well">
+                            <strong><%= "Goal Type: " %></strong>
+                            <%= goal.goal_type %>
+                            </br>
+                            <strong><%= "Goal Name: " %></strong>
+                            <%= goal.goal_name %>
+                            </br>
+                            <strong><%= "Starting Weight (kg): " %></strong>
+                            <%= goal.start %>
+                            </br>
+                            <strong><%= "Current Weight (kg): " %></strong>
+                            <%= goal.current %>
+                            </br>
+                            <strong><%= "Goal Weight (kg): " %></strong>
+                            <%= goal.end_goal %>
+                            </br>
+                        </div>
+                    <% end %>
+                
+                <!-- t.integer  "user_id"
+                t.string   "goal_type"
+                t.string   "goal_name"
+                t.integer  "start"
+                t.integer  "current"
+                t.integer  "end_goal"
+                t.datetime "created_at",   null: false
+                t.datetime "updated_at",   null: false
+                t.date     "start_date"
+                t.date     "current_date"
+                t.date     "end_date" -->
+                
+                
+                
             </div>
         </div>            
     </div>

@@ -9,8 +9,31 @@
         <%= f.text_field :goal_name, class: 'form-control' %>
     </div>
     <div class="form-group">
-        
-        
+        <%= f.label :start %>
+        <%= f.number_field :start, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :start_date %>
+        <%= f.date_field :start_date, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :current %>
+        <%= f.number_field :current, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :current_date %>
+        <%= f.date_field :current_date, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :end_goal %>
+        <%= f.number_field :end_goal, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :end_date %>
+        <%= f.date_field :end_date, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.submit "Add Goal", class: 'btn btn-primary' %>
     </div>
     
     
