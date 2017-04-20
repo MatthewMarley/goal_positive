@@ -1,5 +1,6 @@
 <!-- the multipart => true is done automatically by 'form_for', we need to add it for 'form_tag' -->
-<%= form_for @goal, url: user_goals_path(user_id: current_user.id), :html => { :multipart => true } do |f| %>
+<!-- The url: was pointing to edit_user_goal_path, but that was incorrect. Now pointing to show/update/destroy! -->
+<%= form_for @specific_goal, url: user_goal_path, :html => { :multipart => true } do |f| %>
     <div class="form-group">
         <%= f.label :goal_type %>
         <%= f.select :goal_type, ['Physical', 'Mental', 'Spiritual'], {}, class: 'form-control' %>
@@ -33,8 +34,6 @@
         <%= f.date_field :end_date, class: 'form-control' %>
     </div>
     <div class="form-group">
-        <%= f.submit "Add Goal", class: 'btn btn-primary' %>
+        <%= f.submit "Update Goal", class: 'btn btn-primary' %>
     </div>
-    
-    
 <% end %>

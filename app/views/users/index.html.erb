@@ -12,6 +12,7 @@
                             <strong><%= "Contact Email: " %></strong>
                             <%= user.profile.contact_email %> </br>
                             <%= hidden_field_tag 'user_id', params[:user] %>
+                            <%= hidden_field_tag 'id', params[:user] %>
                             <%= link_to "See this users goals", user_goals_path(user.id) %>
                             </br>
                         </div>

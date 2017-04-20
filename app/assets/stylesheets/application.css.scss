@@ -66,11 +66,18 @@ h2, h3 {
     margin: auto;
 }
 
-.view-goals:hover {
+.view-goals {
+    margin-bottom: 20px;
+    &:hover {
     color: black;
     opacity: 0.75;
+    }
 }
 
 .goal-edit {
     margin-bottom: -15px;
+}
+
+.links_within_goals {
+    margin-bottom: 20px;
 }

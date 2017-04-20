@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     devise_for :users, controllers: { registrations: 'users/registrations' }
     resources :users do
       resource :profile
-      resource :goals do
+      resources :goals do
         resource :comments
       end
     end
