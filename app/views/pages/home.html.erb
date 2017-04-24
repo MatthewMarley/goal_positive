@@ -1,5 +1,8 @@
 <div class="container-fluid home-callout text-center">
-    <h1>Welcome to GoalPositive!</h1>
+    <h1>Welcome to GoalPositive 
+    <% if user_signed_in? %>
+        <%= "#{current_user.profile.first_name}"%>!</h1>
+    <% end %>
     <h2>The home of positivity.</h2>
 </div>
 

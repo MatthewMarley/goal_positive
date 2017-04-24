@@ -1,0 +1,15 @@
+<!-- the multipart => true is done automatically by 'form_for', we need to add it for 'form_tag' -->
+<%= form_for @comment, url: user_goal_comments_path(user_id: current_user.id, goal_id: @specific_goal.id), :html => { :multipart => true } do |f| %>
+    
+    <div class="form-group">
+        <%= f.label :comment %>
+        <%= f.text_area :comment, class: 'form-control comment-area' %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.submit "Add Comment", class: 'btn btn-primary' %>
+    </div>
+
+<% end %>
+
+

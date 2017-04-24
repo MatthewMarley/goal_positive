@@ -30,6 +30,18 @@ class ProfilesController < ApplicationController
     end
     
     
+    def update
+        @user = User.find(params[:user_id])
+        @profile = @user.profile
+        if @profile.update_attributes(profile_params)
+            flash[:success] = "Profile Updated"
+            redirect_to user_path(current_user.id)
+        else
+            flash[:error] = "Error Occurred"
+            redirect_to root_path
+        end
+    end
+    
     
     private
         def profile_params

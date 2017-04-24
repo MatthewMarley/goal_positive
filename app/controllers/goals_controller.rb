@@ -2,7 +2,6 @@ class GoalsController < ApplicationController
     
     def index
         @user = User.find(params[:user_id])
-        # @goal = Goal.find(params[:user_id])
         @specific_goal = Goal.find_by_user_id_and_id(params[:user_id],params[:id])
     end
     
@@ -25,10 +24,12 @@ class GoalsController < ApplicationController
         
     end
     
-    
+    # GET to /users/:user_id/goals/:id
     def show
         @user = User.find(params[:user_id])
-        @specific_goal = Goal.find_by_user_id_and_id(params[:user_id],params[:id])
+        @specific_goal = Goal.find_by_id(params[:id])
+        @comment = Comment.find_by_id(params[:id])
+        @goal = Goal.find(params[:id])
     end
     
     # GET to /users/user_id/goals/edit

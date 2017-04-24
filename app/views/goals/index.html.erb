@@ -3,10 +3,10 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="text-center">
                 <h1>Goal Homepage</h1>
+                <% if (user_signed_in? && (current_user.id == @user.id)) %>
                     <%= link_to "Create a New Goal", new_user_goal_path %>
+                <% end %>
                 </br>
-                </br>
-                
                     <!-- @goals should be for all goals for only the current_user -->
                     <% @user.goals.each do |goal| %>
                         <div class="well view-goals">
@@ -32,10 +32,10 @@
                                         <h5 class="text-center"><%= link_to "Edit your Goal", edit_user_goal_path(user_id: current_user.id, id: goal.id) %></h5>
                                     </div>
                                     <div class="col-xs-4">
-                                        <h5 class="text-center"><%= link_to "Delete this goal", user_goal_path(user_id: current_user.id, id: goal.id), data: {:confirm => 'Are you sure?'}, :method => :delete %></h5>
+                                        <h5 class="text-center"><%= link_to "Jump into Goal", user_goal_path(user_id: current_user.id, id: goal.id) %></h5>
                                     </div>
                                     <div class="col-xs-4">
-                                        <h5 class="text-center"><%= link_to "Jump into Goal", user_goal_path(user_id: current_user.id, id: goal.id) %></h5>
+                                        <h5 class="text-center"><%= link_to "Delete this goal", user_goal_path(user_id: current_user.id, id: goal.id), data: {:confirm => 'Are you sure?'}, :method => :delete %></h5>
                                     </div>
                                 <% else %>
                                     <div class="col-md-6 col-md-offset-3">

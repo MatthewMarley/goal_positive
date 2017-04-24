@@ -3,42 +3,40 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="text-center">
                 <h1>Goal Homepage</h1>
-                    <%= link_to "Create a New Goal", new_user_goal_path %>
                 </br>
+                    <!-- @goals should be for all goals for only the current_user -->
+                    <div class="well view-goals">
+                        <strong><%= "Goal Type: " %></strong>
+                        <%= @specific_goal.goal_type %>
+                        </br>
+                        <strong><%= "Goal Name: " %></strong>
+                        <%= @specific_goal.goal_name %>
+                        </br>
+                        <strong><%= "Starting Weight (kg): " %></strong>
+                        <%= @specific_goal.start %>
+                        </br>
+                        <strong><%= "Current Weight (kg): " %></strong>
+                        <%= @specific_goal.current %>
+                        </br>
+                        <strong><%= "Goal Weight (kg): " %></strong>
+                        <%= @specific_goal.end_goal %>
+                        </br>
+                        <%= hidden_field_tag @specific_goal.id %>
+                    </div>
+                <h3><u>Comments</u></h3>
+                <%= link_to "Add a comment", new_user_goal_comment_path(user_id: current_user.id, goal_id: @specific_goal.id) %>
                 </br>
                 
-                    <%= @specific_goal. do |goal| %>
-                        <div class="well">
-                            <strong><%= "Goal Type " %></strong>
-                            <%= goal.goal_type %>
-                        </div>
+                <% @goal.comments.each do |comment| %>
+                    <div class="well view-comments">
+                        <!-- This makes every comment show up as whoever has logged in, not who made the comment -->
+                        <strong><%= "#{@comment.goal_id}:" %></strong>
+                            <%= comment.comment %>
+                    <% if (user_signed_in? && (current_user.id == @user.id)) %>
+                        <p class="text-right delete-comment"><%= link_to "Delete Comment", user_goal_comment_path(goal_id: @specific_goal.id, comment_id: @comment.id), data: {:confirm => 'Are you sure?'}, :method => :delete %></p>
                     <% end %>
-                    
-                    <!-- @goals should be for all goals for only the current_user -->
-                    <% @user.goals.each do |goal| %>
-                        <div class="well view-goals">
-                            <strong><%= "Goal Type: " %></strong>
-                            <%= goal.goal_type %>
-                            </br>
-                            <strong><%= "Goal Name: " %></strong>
-                            <%= goal.goal_name %>
-                            </br>
-                            <strong><%= "Starting Weight (kg): " %></strong>
-                            <%= goal.start %>
-                            </br>
-                            <strong><%= "Current Weight (kg): " %></strong>
-                            <%= goal.current %>
-                            </br>
-                            <strong><%= "Goal Weight (kg): " %></strong>
-                            <%= goal.end_goal %>
-                            </br>
-                            <%= hidden_field_tag goal.id %>
-                            <h5 class="text-left"><%= link_to "Edit your Goal", edit_user_goal_path(user_id: current_user.id, id: goal.id) %></h5>
-                            <h5 class="text-left"><%= link_to "Jump into Goal", user_goal_path(user_id: current_user.id, id: goal.id) %></h5>
-                            <h5 class="text-right"><%= link_to "Delete this goal", user_goal_path(user_id: current_user.id, id: goal.id), data: {:confirm => 'Are you sure?'}, :method => :delete %></h5>
-                        </div>
-                    <% end %>
-
+                    </div>
+                <% end %>
             </div>
         </div>            
     </div>

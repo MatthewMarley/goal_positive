@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :users do
       resource :profile
       resources :goals do
-        resource :comments
+        resources :comments
       end
     end
     get '/about', to: 'pages#about'
