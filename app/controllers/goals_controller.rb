@@ -36,7 +36,6 @@ class GoalsController < ApplicationController
     def edit
          @user = User.find(params[:user_id])
          @goal = current_user.goals.find(params[:id])
-         # @specific_goal = current_user.goals.find(params[:user_id],params[:goals_id])
          @specific_goal = Goal.find_by_user_id_and_id(params[:user_id],params[:id])
          
     end

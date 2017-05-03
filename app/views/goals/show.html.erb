@@ -30,10 +30,10 @@
                 <% @goal.comments.each do |comment| %>
                     <div class="well view-comments">
                         <!-- This makes every comment show up as whoever has logged in, not who made the comment -->
-                        <strong><%= "#{@comment.goal_id}:" %></strong>
+                        
                             <%= comment.comment %>
                     <% if (user_signed_in? && (current_user.id == @user.id)) %>
-                        <p class="text-right delete-comment"><%= link_to "Delete Comment", user_goal_comment_path(goal_id: @specific_goal.id, comment_id: @comment.id), data: {:confirm => 'Are you sure?'}, :method => :delete %></p>
+                        <p class="text-right delete-comment"><%= link_to "Delete Comment", user_goal_comment_path(goal_id: @specific_goal.id), data: {:confirm => 'Are you sure?'}, :method => :delete %></p>
                     <% end %>
                     </div>
                 <% end %>
